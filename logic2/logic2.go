@@ -6,6 +6,19 @@ import (
 	"strconv"
 )
 
+// Number 1-2
+func Logic2AscRows(num int, initial int, step int) (result [][]int) {
+	numSlice := logic1.Logic1AscStep(num, initial, step)
+	result = utils.InitMatrix(num)
+
+	for row := 0; row < num; row++ {
+		for col := 0; col < num; col++ {
+			result[row][col] = numSlice[col]
+		}
+	}
+	return result
+}
+
 // Number 3
 func Logic2AscAll(num int, initial int, step int) (result [][]int) {
 	numPoint := initial

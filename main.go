@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Println("\n--------------------[LOGIC-01]--------------------")
+	fmt.Println("\n----------------------------------------[LOGIC-01]----------------------------------------")
 
 	fmt.Println("\nLogic 1 Number 1:")
 	go_print_slice.PrintSlice1D(logic1.Logic1AscStep(10, 1, 2))
@@ -46,7 +46,16 @@ func main() {
 	fmt.Println("\nLogic 1 Number 11:")
 	go_print_slice.PrintSlice1DStr(logic1.Logic1OddBuzzEvenNum(10, 3, 2))
 
-	fmt.Println("\n--------------------[LOGIC-02]--------------------")
+	fmt.Println("\nLogic 1 Number 12:")
+	go_print_slice.PrintSlice1D(logic1.Logic1Repeat4Elements(12, 1, 2))
+
+	fmt.Println("\n----------------------------------------[LOGIC-02]----------------------------------------")
+
+	fmt.Println("\nLogic 2 Number 1:")
+	go_print_slice.PrintSlice2D(logic2.Logic2AscRows(9, 1, 2))
+
+	fmt.Println("\nLogic 2 Number 2:")
+	go_print_slice.PrintSlice2D(logic2.Logic2AscRows(9, 2, 2))
 
 	fmt.Println("\nLogic 2 Number 3:")
 	go_print_slice.PrintSlice2D(logic2.Logic2AscAll(9, 1, 2))

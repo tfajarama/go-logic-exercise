@@ -82,3 +82,19 @@ func Logic1OddBuzzEvenNum(num int, initial int, step int) (slice []string) {
 	}
 	return slice
 }
+
+// Number 12
+func Logic1Repeat4Elements(num int, initial int, step int) (result []int) {
+	numSlice := Logic1AscStep(4, initial, step)
+	result = make([]int, num)
+	pointer := 0
+	for i := 0; i < num; i++ {
+		result[i] = numSlice[pointer]
+		if (i+1)%4 == 0 {
+			pointer = 0
+		} else {
+			pointer++
+		}
+	}
+	return result
+}
