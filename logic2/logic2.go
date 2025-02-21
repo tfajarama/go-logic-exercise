@@ -7,87 +7,91 @@ import (
 )
 
 // Number 1-2
-func Logic2AscRows(num int, initial int, step int) (result [][]int) {
-	numSlice := logic1.Logic1AscStep(num, initial, step)
+func Logic2AscRows(num int, initial int, jump int) (result [][]int) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitMatrix(num)
 
 	for row := 0; row < num; row++ {
 		for col := 0; col < num; col++ {
-			result[row][col] = numSlice[col]
+			result[row][col] = numSlice[col] // fill with the value, forwards, same for each row
 		}
 	}
+
 	return result
 }
 
 // Number 3
-func Logic2AscAll(num int, initial int, step int) (result [][]int) {
-	numPoint := initial
+func Logic2AscAll(num int, initial int, jump int) (result [][]int) {
+	value := initial
 	result = utils.InitMatrix(num)
 
 	for row := 0; row < num; row++ {
 		for col := 0; col < num; col++ {
-			result[row][col] = numPoint
-			numPoint += step
+			result[row][col] = value // fill with the value, forwards, ascending each time
+			value += jump
 		}
 	}
+
 	return result
 }
 
 // Number 7
-func Logic2StairsDown(num int, initial int, step int) (result [][]string) {
-	numPoint := initial
+func Logic2StairsDown(num int, initial int, jump int) (result [][]string) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitStrMatrix(num)
 
 	for row := 0; row < num; row++ {
 		for col := 0; col < num; col++ {
-			if row == col {
-				result[row][col] = strconv.Itoa(numPoint)
-				numPoint += step
-			} else {
-				result[row][col] = "-"
+			if row == col { // if the row and col index is same (creating a stairs down), fill with the value
+				result[row][col] = strconv.Itoa(numSlice[col])
+			} else { // other than that, fill with an empty space
+				result[row][col] = " "
 			}
 		}
 	}
+
 	return result
 }
 
 // Number 8
-func Logic2StairsUp(num int, initial int, step int) (result [][]string) {
-	numSlice := logic1.Logic1AscStep(num, initial, step)
+func Logic2StairsUp(num int, initial int, jump int) (result [][]string) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitStrMatrix(num)
 
 	for row := 0; row < num; row++ {
 		for col := 0; col < num; col++ {
-			if row+col == num-1 {
+			if row+col == num-1 { // if the row + col index is equals with the last index (creating a stairs up), fill with the value
 				result[row][col] = strconv.Itoa(numSlice[col])
-			} else {
-				result[row][col] = "-"
+			} else { // other than that, fill with an empty space
+				result[row][col] = " "
 			}
 		}
 	}
+
 	return result
 }
 
 // Number 9
-func Logic2XSign(num int, initial int, step int) (result [][]string) {
-	numSlice := logic1.Logic1AscStep(num, initial, step)
+func Logic2XSign(num int, initial int, jump int) (result [][]string) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitStrMatrix(num)
 
 	for row := 0; row < num; row++ {
 		for col := 0; col < num; col++ {
-			if row+col == num-1 || row == col {
+			if row+col == num-1 || row == col { // if the index creating a stairs down or a stairs up, fill with the value
 				result[row][col] = strconv.Itoa(numSlice[col])
-			} else {
-				result[row][col] = "-"
+			} else { // other than that, fill with an empty space
+				result[row][col] = " "
 			}
 		}
 	}
+
 	return result
 }
 
 // Number 10
-func Logic2TriangleDownLeft(num int, initial int, step int) (result [][]string) {
-	numSlice := logic1.Logic1AscStep(num, initial, step)
+func Logic2TriangleDownLeft(num int, initial int, jump int) (result [][]string) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitStrMatrix(num)
 
 	for row := 0; row < num; row++ {
@@ -95,16 +99,17 @@ func Logic2TriangleDownLeft(num int, initial int, step int) (result [][]string) 
 			if col <= row {
 				result[row][col] = strconv.Itoa(numSlice[col])
 			} else {
-				result[row][col] = "-"
+				result[row][col] = " "
 			}
 		}
 	}
+
 	return result
 }
 
 // Number 11
-func Logic2TriangleUpRight(num int, initial int, step int) (result [][]string) {
-	numSlice := logic1.Logic1AscStep(num, initial, step)
+func Logic2TriangleUpRight(num int, initial int, jump int) (result [][]string) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitStrMatrix(num)
 
 	for row := 0; row < num; row++ {
@@ -112,16 +117,17 @@ func Logic2TriangleUpRight(num int, initial int, step int) (result [][]string) {
 			if col >= row {
 				result[row][col] = strconv.Itoa(numSlice[col])
 			} else {
-				result[row][col] = "-"
+				result[row][col] = " "
 			}
 		}
 	}
+
 	return result
 }
 
 // Number 12
-func Logic2TriangleLeftRight(num int, initial int, step int) (result [][]string) {
-	numSlice := logic1.Logic1AscStep(num, initial, step)
+func Logic2TriangleLeftRight(num int, initial int, jump int) (result [][]string) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitStrMatrix(num)
 
 	for row := 0; row < num; row++ {
@@ -140,16 +146,17 @@ func Logic2TriangleLeftRight(num int, initial int, step int) (result [][]string)
 			if col <= head || col >= tail {
 				result[row][col] = strconv.Itoa(numSlice[col])
 			} else {
-				result[row][col] = "-"
+				result[row][col] = " "
 			}
 		}
 	}
+
 	return result
 }
 
 // Number 13
-func Logic2TriangleUpDown(num int, initial int, step int) (result [][]string) {
-	numSlice := logic1.Logic1AscStep(num, initial, step)
+func Logic2TriangleUpDown(num int, initial int, jump int) (result [][]string) {
+	numSlice := logic1.Logic1AscStep(num, initial, jump)
 	result = utils.InitStrMatrix(num)
 
 	for row := 0; row < num; row++ {
@@ -168,9 +175,10 @@ func Logic2TriangleUpDown(num int, initial int, step int) (result [][]string) {
 			if col >= head && col <= tail {
 				result[row][col] = strconv.Itoa(numSlice[col])
 			} else {
-				result[row][col] = "-"
+				result[row][col] = " "
 			}
 		}
 	}
+
 	return result
 }
