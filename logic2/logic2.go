@@ -35,6 +35,28 @@ func Logic2AscAll(num int, initial int, jump int) (result [][]int) {
 	return result
 }
 
+// Number 5
+func Logic2AscAllAlternating(num int, initial int, jump int) (result [][]int) {
+	value := initial
+	result = utils.InitMatrix(num)
+
+	for row := 0; row < num; row++ {
+		if (row+1)%2 == 1 {
+			for col := 0; col < num; col++ {
+				result[row][col] = value // fill with the value, forwards, ascending each time
+				value += jump
+			}
+		} else {
+			for col := num - 1; col >= 0; col-- {
+				result[row][col] = value // fill with the value, backwards, ascending each time
+				value += jump
+			}
+		}
+	}
+
+	return result
+}
+
 // Number 7
 func Logic2StairsDown(num int, initial int, jump int) (result [][]string) {
 	numSlice := logic1.Logic1AscStep(num, initial, jump)
