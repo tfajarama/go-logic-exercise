@@ -48,7 +48,7 @@ func Logic2AscAllCustomRow1Col1(num int, initial int, jumpRow1 int, jumpCol1 int
 			}
 		} else {
 			for col := 0; col < num; col++ {
-				result[row][col] = value // fill with the value, backwards, ascending each time
+				result[row][col] = value // fill with the value, forwards, ascending each time, with conditional case in edge columns
 				if col == 0 || col == num-1 {
 					value += jumpCol1
 				} else {
@@ -76,6 +76,36 @@ func Logic2AscAllAlternating(num int, initial int, jump int) (result [][]int) {
 			for col := num - 1; col >= 0; col-- {
 				result[row][col] = value // fill with the value, backwards, ascending each time
 				value += jump
+			}
+		}
+	}
+
+	return result
+}
+
+// Number 6
+func Logic2AscAllAlternatingCustomOddEvenRow(num int, initial int, jumpOddRow int, jumpEvenRow int, jumpBetweenRow int) (result [][]int) {
+	value := initial
+	result = utils.InitMatrix(num)
+
+	for row := 0; row < num; row++ {
+		if (row+1)%2 == 1 {
+			for col := 0; col < num; col++ {
+				result[row][col] = value // fill with the value, forwards, ascending each time
+				if col == num-1 {
+					value += jumpBetweenRow
+				} else {
+					value += jumpOddRow
+				}
+			}
+		} else {
+			for col := num - 1; col >= 0; col-- {
+				result[row][col] = value // fill with the value, backwards, ascending each time
+				if col == 0 {
+					value += jumpBetweenRow
+				} else {
+					value += jumpEvenRow
+				}
 			}
 		}
 	}

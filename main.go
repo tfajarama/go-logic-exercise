@@ -66,6 +66,9 @@ func main() {
 	fmt.Println("\nLogic 2 Number 5:")
 	go_print_slice.PrintSlice2D(logic2.Logic2AscAllAlternating(9, 1, 2))
 
+	fmt.Println("\nLogic 2 Number 6:")
+	go_print_slice.PrintSlice2D(logic2.Logic2AscAllAlternatingCustomOddEvenRow(9, 1, 3, 2, 3))
+
 	fmt.Println("\nLogic 2 Number 7:")
 	go_print_slice.PrintSlice2DStr(logic2.Logic2StairsDown(9, 1, 2))
 
