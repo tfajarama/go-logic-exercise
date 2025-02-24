@@ -60,6 +60,9 @@ func main() {
 	fmt.Println("\nLogic 2 Number 3:")
 	go_print_slice.PrintSlice2D(logic2.Logic2AscAll(9, 1, 2))
 
+	fmt.Println("\nLogic 2 Number 4:")
+	go_print_slice.PrintSlice2D(logic2.Logic2AscAllCustomRow1Col1(9, 1, 3, 3, 2))
+
 	fmt.Println("\nLogic 2 Number 5:")
 	go_print_slice.PrintSlice2D(logic2.Logic2AscAllAlternating(9, 1, 2))
 
