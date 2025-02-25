@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/tfajarama/go-logic-exercise/logic1"
 	"github.com/tfajarama/go-logic-exercise/logic2"
+	"github.com/tfajarama/go-logic-exercise/logic3"
 	"github.com/tfajarama/go-print-slice"
 )
 
@@ -89,4 +90,12 @@ func main() {
 
 	fmt.Println("\nLogic 2 Number 13:")
 	go_print_slice.PrintSlice2DStr(logic2.Logic2TriangleUpDown(9, 1, 2))
+
+	fmt.Println("\n----------------------------------------[LOGIC-03]----------------------------------------")
+
+	fmt.Println("\nLogic 3 Number 1:")
+	go_print_slice.PrintSlice2DStr(logic3.Logic3TriangleDownLeftAscAll(9, 1, 2))
+
+	fmt.Println("\nLogic 3 Number 2:")
+	go_print_slice.PrintSlice2DStr(logic3.Logic3TriangleUpRightAscAll(9, 1, 2))
 }
