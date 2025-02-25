@@ -36,28 +36,21 @@ func Logic2AscAll(num int, initial int, jump int) (result [][]int) {
 }
 
 // Number 4
-func Logic2AscAllCustomRow1Col1(num int, initial int, jumpRow1 int, jumpCol1 int, jumpOther int) (result [][]int) {
-	value := initial
+func Number4(num int, initial int, jumpRow1 int, jumpCol1 int, jumpOther int) (result [][]int) {
 	result = utils.InitMatrix(num)
-
+	value := initial
 	for row := 0; row < num; row++ {
-		if row == 0 {
-			for col := 0; col < num; col++ {
-				result[row][col] = value // fill with the value, forwards, ascending each time
+		for col := 0; col < num; col++ {
+			result[row][col] = value // fill with the value, forwards, ascending each time, with conditional edge cases
+			if row == 0 {
 				value += jumpRow1
-			}
-		} else {
-			for col := 0; col < num; col++ {
-				result[row][col] = value // fill with the value, forwards, ascending each time, with conditional case in edge columns
-				if col == 0 || col == num-1 {
-					value += jumpCol1
-				} else {
-					value += jumpOther
-				}
+			} else if col == 0 || col == num-1 {
+				value += jumpCol1
+			} else {
+				value += jumpOther
 			}
 		}
 	}
-
 	return result
 }
 
