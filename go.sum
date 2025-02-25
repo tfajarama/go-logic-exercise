@@ -1,14 +1,2 @@
-github.com/tfajarama/go-print-slice v1.0.0 h1:yVRFNVkpAqFJ6lxbVAEE71162Wb55OqyOtbaHnFr9go=
-github.com/tfajarama/go-print-slice v1.0.0/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
-github.com/tfajarama/go-print-slice v1.1.0 h1:nkavvFaNsuFnUeXjEq9Rrinu+EwFowyu8qulPOolhlc=
-github.com/tfajarama/go-print-slice v1.1.0/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
-github.com/tfajarama/go-print-slice v1.2.0 h1:pxEZnK3PGskyUKHa9A6lJ2q9sDgNCkSOYD7KNMIgbIo=
-github.com/tfajarama/go-print-slice v1.2.0/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
-github.com/tfajarama/go-print-slice v1.2.1 h1:+5NDc8llEVAoeHA4UQVSw8Uk7fq7kwvTWGX49w4bP5s=
-github.com/tfajarama/go-print-slice v1.2.1/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
-github.com/tfajarama/go-print-slice v1.2.2 h1:u4rAIEFd+WhKSxVoGKEbo5CM25ZnQEakumfhQD7nA/s=
-github.com/tfajarama/go-print-slice v1.2.2/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
-github.com/tfajarama/go-print-slice v1.3.0 h1:fEmYSuAOzP1GNN1pXKXszBzWcuzQfI4g2Wqhbhrx8cw=
-github.com/tfajarama/go-print-slice v1.3.0/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
-github.com/tfajarama/go-print-slice v1.3.1 h1:JfNv8XP9LEVA/q4tWJbOI/u661nH8BrP9gbgynyT14k=
-github.com/tfajarama/go-print-slice v1.3.1/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
+github.com/tfajarama/go-print-slice v1.3.2 h1:TqywGOywj+xa6XOlYQXMZPXzOKNBLwfWtBDy0x/fUu4=
+github.com/tfajarama/go-print-slice v1.3.2/go.mod h1:TwX9yDs1402D8wEIHKk/7+Xi9WXlt/EEp1jhUFL8R94=
