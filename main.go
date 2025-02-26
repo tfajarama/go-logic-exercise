@@ -117,11 +117,29 @@ func main() {
 	fmt.Println("\nLogic 3 Number 8:")
 	go_print_slice.PrintSlice2D(logic3.Number8(9))
 
+	fmt.Println("\nLogic 3 Number 9:")
+	go_print_slice.PrintSlice2D(logic3.Number9(9))
+
+	fmt.Println("\nLogic 3 Number 10:")
+	go_print_slice.PrintSlice2D(logic3.Number10(9))
+
 	fmt.Println("\nLogic 3 Number 11:")
 	go_print_slice.PrintSlice2D(logic3.Number11(9))
 
 	fmt.Println("\nLogic 3 Number 11b:")
 	go_print_slice.PrintSlice2D(logic3.Number11b(9))
+
+	fmt.Println("\nLogic 3 Number 12:")
+	go_print_slice.PrintSlice2D(logic3.Number12SWStyle(9))
+
+	fmt.Println("\nLogic 3 Number 12b:")
+	go_print_slice.PrintSlice2D(logic3.Number12bSWStyle(9))
+
+	//fmt.Println("\nLogic 3 Number 12:")
+	//go_print_slice.PrintSlice2D(logic3.Number12HWStyle(9))
+
+	//fmt.Println("\nLogic 3 Number 12b:")
+	//go_print_slice.PrintSlice2D(logic3.Number12bHWStyle(9))
 
 	fmt.Println("\nLogic 3 Number 14:")
 	go_print_slice.PrintSlice2D(logic3.Number14(9))
