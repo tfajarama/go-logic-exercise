@@ -38,18 +38,35 @@ func Number2(num int) (result [][]int) {
 	return result
 }
 
-// Number 3 : UPDATE LATER
+// Number 3
 func Number3(num int) (result [][]int) {
 	result = utils.InitMatrix(num)
 	value := 2
 	for row := 0; row < num; row++ {
 		for col := 0; col < num-row; col++ {
-			if row%2 == 0 {
+			if row == 0 {
 				result[row][col] = value
-				value += 2
+				if col == 0 {
+					value += 2
+				} else {
+					value += 3
+				}
 			} else {
-				result[row][num-1-col-row] = value
-				value += 3
+				if row%2 == 0 {
+					result[row][col] = value
+					if col == num-1-row {
+						value += 3
+					} else {
+						value += 2
+					}
+				} else {
+					result[row][num-1-col-row] = value
+					if col == num-1-row {
+						value += 2
+					} else {
+						value += 3
+					}
+				}
 			}
 		}
 	}
@@ -170,6 +187,8 @@ func Number8(num int) (result [][]int) {
 func Number9(num int) (result [][]int) {
 	result = utils.InitMatrix(num)
 	midNum := (num - 1) / 2
+	// process only a quarter of matrix (top-left), mirror the other 3 quarter
+	// start iterating from the bottom left to the top right of the (top-left) quarter
 	for row := midNum; row >= 0; row-- {
 		value := 1
 		for col := midNum - row; col <= midNum; col++ {
@@ -187,13 +206,15 @@ func Number9(num int) (result [][]int) {
 func Number10(num int) (result [][]int) {
 	result = utils.InitMatrix(num)
 	midNum := (num - 1) / 2
+	// process only a quarter of matrix (top-left), mirror the other 3 quarter
+	// start iterating from the bottom right to the top left of the (top-left) quarter
 	for row := midNum; row >= 0; row-- {
 		value := 1 + (2 * (midNum - row))
 		for col := midNum; col >= midNum-row; col-- {
-			result[row][col] = value
-			result[row][num-1-col] = value
-			result[num-1-row][col] = value
-			result[num-1-row][num-1-col] = value
+			result[row][col] = value             // top half left quarter
+			result[row][num-1-col] = value       // mirror top half right quarter
+			result[num-1-row][col] = value       // mirror bottom half left quarter
+			result[num-1-row][num-1-col] = value // mirror bottom half right quarter
 			value += 2
 		}
 	}
@@ -341,19 +362,27 @@ func Number12bHWStyle(num int) (result [][]int) {
 	return result
 }
 
-// Number 14 : UPDATE LATER
+// Number 14
 func Number14(num int) (result [][]int) {
 	result = utils.InitMatrix(num)
-	value := 1
+	prevValue := 0
+	currValue := 1
 	// iterate the columns, then its rows
 	for col := 0; col < num; col++ {
 		for row := 0; row < num; row++ {
 			if col%2 == 0 { // if the row index is even, fill from the top
-				result[row][col] = value
+				result[row][col] = currValue
 			} else { // if the row index is odd, fill from the bottom
-				result[num-1-row][col] = value
+				result[num-1-row][col] = currValue
 			}
-			value += 2
+			// if it is the edge case (last column & last 2 row), adjust it
+			if col == num-1 && row >= num-3 {
+				currValue += 2
+			} else { // if it is the normal cases, just do fibonacci
+				tempValue := currValue
+				currValue += prevValue
+				prevValue = tempValue
+			}
 		}
 	}
 	return result

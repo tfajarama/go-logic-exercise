@@ -142,5 +142,5 @@ func main() {
 	//go_print_slice.PrintSlice2D(logic3.Number12bHWStyle(9))
 
 	fmt.Println("\nLogic 3 Number 14:")
-	go_print_slice.PrintSlice2D(logic3.Number14(9))
+	go_print_slice.PrintSlice2D(logic3.Number14(5))
 }
