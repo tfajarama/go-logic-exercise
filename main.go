@@ -71,25 +71,25 @@ func main() {
 	go_print_slice.PrintSlice2D(logic2.Logic2AscAllAlternatingCustomOddEvenRow(9, 1, 3, 2, 3))
 
 	fmt.Println("\nLogic 2 Number 7:")
-	go_print_slice.PrintSlice2DStr(logic2.Logic2StairsDown(9, 1, 2))
+	go_print_slice.PrintSlice2D(logic2.Logic2StairsDown(9, 1, 2))
 
 	fmt.Println("\nLogic 2 Number 8:")
-	go_print_slice.PrintSlice2DStr(logic2.Logic2StairsUp(9, 1, 2))
+	go_print_slice.PrintSlice2D(logic2.Logic2StairsUp(9, 1, 2))
 
 	fmt.Println("\nLogic 2 Number 9:")
-	go_print_slice.PrintSlice2DStr(logic2.Logic2XSign(9, 1, 2))
+	go_print_slice.PrintSlice2D(logic2.Logic2XSign(9, 1, 2))
 
 	fmt.Println("\nLogic 2 Number 10:")
-	go_print_slice.PrintSlice2DStr(logic2.Logic2TriangleDownLeft(9, 1, 2))
+	go_print_slice.PrintSlice2D(logic2.Logic2TriangleDownLeft(9, 1, 2))
 
 	fmt.Println("\nLogic 2 Number 11:")
-	go_print_slice.PrintSlice2DStr(logic2.Logic2TriangleUpRight(9, 1, 2))
+	go_print_slice.PrintSlice2D(logic2.Logic2TriangleUpRight(9, 1, 2))
 
 	fmt.Println("\nLogic 2 Number 12:")
-	go_print_slice.PrintSlice2DStr(logic2.Logic2TriangleLeftRight(9, 1, 2))
+	go_print_slice.PrintSlice2D(logic2.Logic2TriangleLeftRight(9, 1, 2))
 
 	fmt.Println("\nLogic 2 Number 13:")
-	go_print_slice.PrintSlice2DStr(logic2.Logic2TriangleUpDown(9, 1, 2))
+	go_print_slice.PrintSlice2D(logic2.Logic2TriangleUpDown(9, 1, 2))
 
 	fmt.Println("\n----------------------------------------[LOGIC-03]----------------------------------------")
 
@@ -140,6 +140,9 @@ func main() {
 
 	//fmt.Println("\nLogic 3 Number 12b:")
 	//go_print_slice.PrintSlice2D(logic3.Number12bHWStyle(9))
+
+	fmt.Println("\nLogic 3 Number 13:")
+	go_print_slice.PrintSlice2D(logic3.Number13(9))
 
 	fmt.Println("\nLogic 3 Number 14:")
 	go_print_slice.PrintSlice2D(logic3.Number14(5))

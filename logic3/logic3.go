@@ -1,6 +1,7 @@
 package logic3
 
 import (
+	"github.com/tfajarama/go-logic-exercise/logic1"
 	"github.com/tfajarama/go-logic-exercise/utils"
 )
 
@@ -357,6 +358,25 @@ func Number12bHWStyle(num int) (result [][]int) {
 				result[num-1-row][col-row] = valueLeftMid           // mirror bottom half left quarter
 			}
 			valueLeftMid += 2
+		}
+	}
+	return result
+}
+
+// Number 13
+func Number13(num int) (result [][]int) {
+	result = utils.InitMatrix(num)
+	midNum := (num - 1) / 2
+	valueSlice := logic1.Logic1AscStep(midNum+1, 1, 2)
+	// process only a quarter of matrix (top-left), mirror the other 3 quarter
+	// start iterating from the bottom left to the top right of the (top-left) quarter
+	for row := midNum; row >= 0; row-- {
+		// fill the columns with 2 step/jump
+		for col := midNum - row; col <= midNum; col += 2 {
+			result[row][col] = valueSlice[col]             // top half left quarter
+			result[row][num-1-col] = valueSlice[col]       // mirror top half right quarter
+			result[num-1-row][col] = valueSlice[col]       // mirror bottom half left quarter
+			result[num-1-row][num-1-col] = valueSlice[col] // mirror bottom half right quarter
 		}
 	}
 	return result
